@@ -8,7 +8,7 @@ import torch
 from rdkit import RDLogger
 from rdkit.Chem import MolFromSmiles
 from tqdm.auto import tqdm
-from model import AEF_DTA
+from model import AFE_DTA
 from torch.utils.data import DataLoader
 from rdkit import Chem
 
@@ -21,7 +21,7 @@ def load_model(model_path, tokenizer_path):
     with open(tokenizer_path, 'rb') as f:
         tokenizer = pickle.load(f)
 
-    model = AEF_DTA(tokenizer)
+    model = AFE_DTA(tokenizer)
     states = torch.load(model_path, map_location='cpu')
     print(model.load_state_dict(states, strict=False))
 
@@ -59,7 +59,7 @@ if __name__ == '__main__':
         'device': device
     }
 
-    model_path = f'/saved_models/aef_dta_model_{dataset}.pth'
+    model_path = f'/saved_models/afe_dta_model_{dataset}.pth'
     tokenizer_path = f'data/{dataset}_tokenizer.pkl'
 
 
