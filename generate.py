@@ -10,7 +10,6 @@ from tqdm.auto import tqdm
 from model import AFE_DTA
 from torch.utils.data import DataLoader
 from rdkit import Chem
-
 from utils import *
 
 
