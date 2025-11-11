@@ -7,7 +7,7 @@ from torch.utils.data import DataLoader
 import argparse
 
 from utils import *
-from model import DeepDTAGen
+from model import AFE_DTA 
 from datasets import TestbedDataset
 
 def main(dataset_name):
@@ -32,7 +32,7 @@ def main(dataset_name):
         tokenizer = pickle.load(f)
 
     # Load model
-    model = DeepDTAGen(tokenizer)
+    model = AEF_DTA(tokenizer)
     model.load_state_dict(torch.load(model_path, map_location=device))
     model.to(device)
 
@@ -76,8 +76,8 @@ def main(dataset_name):
         print(f'AUC Values: {auc_values}')
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='Evaluate DeepDTAGen on a dataset.')
-    parser.add_argument('--dataset', type=str, required=True, help='Name of the dataset (e.g., kiba, davis, bindingdb)')
+    parser = argparse.ArgumentParser(description='Evaluate AFE_DTA on a dataset.')
+    parser.add_argument('--dataset', type=str, required=True, help='Name of the dataset (e.g., kiba, davis)')
     args = parser.parse_args()
 
     main(args.dataset)
