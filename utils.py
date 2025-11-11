@@ -15,7 +15,6 @@ from tqdm.auto import tqdm
 import re
 from typing import List
 
-
 class Tokenizer:
     NUM_RESERVED_TOKENS = 32
     SPECIAL_TOKENS = ('<sos>', '<eos>', '<pad>', '<mask>', '<sep>', '<unk>')
