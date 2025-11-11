@@ -3,7 +3,6 @@ import pickle
 from pathlib import Path
 import pandas as pd
 import rdkit
-
 import torch
 from rdkit import RDLogger
 from rdkit.Chem import MolFromSmiles
