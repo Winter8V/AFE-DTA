@@ -14,7 +14,7 @@ def main(dataset_name):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     # Paths
-    model_path = f'models/deepdtagen_model_{dataset_name}.pth'
+    model_path = f'models/afe_model_{dataset_name}.pth'
     tokenizer_path = f'data/{dataset_name}_tokenizer.pkl'
     test_batch_size = 128
 
@@ -31,7 +31,7 @@ def main(dataset_name):
         tokenizer = pickle.load(f)
 
     # Load model
-    model = AEF_DTA(tokenizer)
+    model = AFE_DTA(tokenizer)
     model.load_state_dict(torch.load(model_path, map_location=device))
     model.to(device)
 
