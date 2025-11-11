@@ -10,7 +10,6 @@ from FetterGrad import FetterGrad
 import sys, os
 import pickle
 import random
-
 # Set random seeds for reproducibility
 seed = 4221
 np.random.seed(seed)
