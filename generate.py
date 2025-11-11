@@ -12,7 +12,6 @@ from torch.utils.data import DataLoader
 from rdkit import Chem
 from utils import *
 
-
 RDLogger.DisableLog('rdApp.*')
 
 def load_model(model_path, tokenizer_path):
