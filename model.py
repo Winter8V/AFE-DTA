@@ -11,6 +11,7 @@ from einops.layers.torch import Rearrange
 from typing import Optional, Dict
 from utils import Tokenizer
 
+
 class PositionalEncoding(nn.Module):
     def __init__(self, d_model, dropout=0.1, max_len=5000):
         super().__init__()
