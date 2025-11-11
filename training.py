@@ -5,7 +5,7 @@ import torch.nn as nn
 import torch.optim as optim
 from torch_geometric.data.storage import GlobalStorage
 from utils import *
-from model import AEF_DTA
+from model import AFE_DTA
 from FetterGrad import FetterGrad
 import sys, os
 import pickle
@@ -139,7 +139,7 @@ def experiment(dataset, device):
         test_loader = DataLoader(test_data, batch_size=BATCH_SIZE, shuffle=False)
         
         # Initialize model, optimizer and loss function
-        model = AEF_DTA(tokenizer).to(device)
+        model = AFE_DTA(tokenizer).to(device)
         optimizer = FetterGrad(optim.Adam(model.parameters(), lr=LR))
         mse_f = nn.MSELoss()
 
@@ -150,7 +150,7 @@ def experiment(dataset, device):
             # Evaluate every 20 epochs
             if (epoch + 1) % 20 == 0:
                 total_loss, mse_loss, test_ci, rm2, auc_values, G, P = test(model, device, test_loader, dataset)
-                filename = f"saved_models/aef_dta_model_{dataset}.pth"
+                filename = f"saved_models/afe_dta_model_{dataset}.pth"
 
                 if mse_loss < best_mse:
                     best_mse = mse_loss
