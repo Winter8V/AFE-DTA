@@ -344,10 +344,10 @@ class LST_Net(nn.Module):
         out = self.fc_layers(x_spline)
         return out
 
-class AEF_DTA(torch.nn.Module):
+class AFE_DTA(torch.nn.Module):
 
     def __init__(self, tokenizer):
-        super(AEF_DTA, self).__init__()
+        super(AFE_DTA, self).__init__()
         self.hidden_dim = 376
         self.max_len = 128
         self.node_feature = 94
