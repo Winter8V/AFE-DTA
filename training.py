@@ -149,7 +149,7 @@ def parse_args():
     parser.add_argument("--weight_decay", type=float, default=0.0)
     parser.add_argument("--epochs", type=int, default=500)
     parser.add_argument("--eval_interval", type=int, default=10)
-    parser.add_argument("--seeds", nargs="+", type=int, default=[32, 33, 41, 42, 43])
+    parser.add_argument("--seeds", nargs="+", type=int, default=[4221])
     parser.add_argument("--device", default="cuda:0")
     return parser.parse_args()
 
